@@ -4,3 +4,7 @@ TokenBench is a comprehensive benchmark specifically designed to standardize the
 
 The explicit goal of TokenBench to "standardize the evaluation of video tokenizers" and its broad domain coverage indicates a growing maturity and recognition of video tokenization as a foundational, yet previously fragmented, area within AI. The necessity for standardization suggests that inconsistent evaluation methods or metrics currently impede progress in video understanding and generative AI. By providing a common framework, TokenBench aims to accelerate research and development in video-centric AI.
 
+
+## X.X Relationship between TokenBench and BDD100k
+TokenBench (NVIDIA Research, 2025) is a meta-benchmark that evaluates how well video-tokenizer models compress and reconstruct long, high-resolution clips. To avoid hosting new data, NVIDIA samples existing public datasets for each domain it cares about. For the driving domain, TokenBench’s creators explicitly pick a subset of raw videos from BDD100K (along with EgoExo-4D, BridgeData V2 and Panda-70M for other domains).  ￼
+- BDD100K (UC Berkeley, 2018) is a 100 k-video dash-cam corpus created to study perception tasks for autonomous driving. BDD100K is one of the source datasets that feed TokenBench; the “driving” slice of TokenBench is literally drawn from BDD100K videos. TokenBench does not alter BDD100K’s labels or tasks—it simply uses the unedited footage as ground-truth pixels when computing reconstruction metrics (PSNR, SSIM, LPIPS, rFVD) for video tokenizers.
